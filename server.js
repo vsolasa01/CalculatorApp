@@ -7,8 +7,7 @@ var bodyParser=require('body-parser');
 
 
 
-//MongoDB connection
-mongoose.connect('mongodb://localhost/operators');
+
 
 //Express
 var app=express();
@@ -17,6 +16,16 @@ app.use(bodyParser.json());
 
 //port
 app.set('port',(process.env.PORT||9999));
+
+//MongoDB connection
+
+if(app.get('port')==9999){
+    mongoose.connect('mongodb://localhost/operators');
+}else{
+    mongoose.connect('mongodb://venkat:venkatesh@ds027165.mlab.com:27165/heroku_gmvdwfqt');
+}
+
+
 
 //Routes
 app.use('/api',require('./routes/api'));

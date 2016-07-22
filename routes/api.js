@@ -15,7 +15,7 @@ var Operator=require('../models/operator');
 
 //Routes
     //operators
-Operator.methods(['get']);
+Operator.methods(['get','post','put','delete']);
 Operator.register(router,'/operators');
 
 
