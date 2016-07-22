@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+                <h1>Calculator Form</h1>
+            <form name="frm">
+                <div class="form-group">
+                    <label for="selector">Select one operation:</label>
+                    <select ng-model="selectedOperation " ng-options="x.operatorName for x in operators" id="selector" required></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="number1">Please enter first number:</label>
+                    <input type="number" name="number1" id="number1" ng-model="number1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="number2">Please enter first number:</label>
+                    <input type="number" name="number2" id="number2" ng-model="number2" required>
+                </div>
+
+                <div>
+                    <button ng-click="calculate()" ng-disabled="frm.$invalid"  class="btn btn-success">Calculate</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
